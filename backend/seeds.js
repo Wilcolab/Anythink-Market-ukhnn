@@ -40,3 +40,5 @@ createCollection()
     console.log(`Error while running seed file: ${err.message}`);
     process.exit(1);
   });
+
+// Test purpose
