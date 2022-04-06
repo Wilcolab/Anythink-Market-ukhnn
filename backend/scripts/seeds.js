@@ -6,6 +6,16 @@ require('../models/Item');
 require('../models/Comment');
 const Item = mongoose.model('Item');
 const User = mongoose.model('User');
+const Comment = mongoose.model('Comment');
+
+const createComment = async (item, index) => {
+  const comment = new Comment({
+    body: `Just a sample comment : ${index}`,
+    user: item.user,
+    item: item._id,
+  });
+  await comment.save();
+};
 
 const createItem = async (user, i) => {
   const item = new Item({
@@ -16,6 +26,7 @@ const createItem = async (user, i) => {
     tags: ['selling', 'example'],
   });
   await item.save();
+  await createComment(item, i);
 };
 
 const createCollection = async () => {
