@@ -19,7 +19,7 @@ const createItem = async (user, i) => {
 };
 
 const createCollection = async () => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 101; i++) {
     const user = new User({
       email: `${i}@gmail.com`,
       password: '12345678',
