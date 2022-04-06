@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-require('./models/User');
-require('./models/Item');
-require('./models/Comment');
+require('../models/User');
+require('../models/Item');
+require('../models/Comment');
 const Item = mongoose.model('Item');
 const User = mongoose.model('User');
 
