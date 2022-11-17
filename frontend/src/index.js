@@ -1,5 +1,3 @@
-
-
 import "./custom.scss";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
