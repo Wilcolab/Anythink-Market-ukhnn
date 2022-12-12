@@ -3,18 +3,24 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import React from "react";
 import { store, history } from "./store";
+import { theme } from "./styles/theme";
 
 import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./styles/GlobalStyle";
 
 import App from "./components/App";
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Switch>
-        <Route path="/" component={App} />
-      </Switch>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Switch>
+          <Route path="/" component={App} />
+        </Switch>
+      </ThemeProvider>
     </ConnectedRouter>
   </Provider>,
 
